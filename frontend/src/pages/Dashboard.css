@@ -1,0 +1,388 @@
+/* ── Layout ── */
+.dash {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background: var(--ink-950);
+}
+
+.dash__loading {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-family: var(--font-mono);
+  color: var(--bone-faint);
+  font-size: 0.8rem;
+}
+
+/* ── Sidebar ── */
+.dash__sidebar {
+  background: var(--ink-900);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  overflow-y: auto;
+  font-size: 0.72rem;
+}
+
+.dash__farmid { display: flex; flex-direction: column; gap: 0.15rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--line); }
+.dash__farmid-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--bone-faint); }
+.dash__farmid-val { font-size: 0.9rem; font-weight: 700; color: var(--wheat); }
+.dash__farmid-sub { color: var(--bone-faint); font-size: 0.65rem; }
+
+.dash__thumbs { display: flex; flex-direction: column; gap: 0.4rem; }
+.dash__thumb { display: flex; align-items: center; gap: 0.4rem; color: var(--bone-dim); }
+.dash__thumb-img {
+  width: 36px; height: 28px; border-radius: 3px; display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; flex-shrink: 0;
+}
+.dash__thumb-img--optical { background: linear-gradient(135deg, #1b2b1a, #4a6b3a); color: #cfe0bd; }
+.dash__thumb-img--sar { background: linear-gradient(135deg, #142530, #2d5570); color: #b9d6e6; }
+
+.dash__section-head { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--bone-faint); font-weight: 700; padding-top: 0.3rem; }
+
+.dash__pipeline { display: flex; flex-direction: column; gap: 0.25rem; }
+.pipeline__step-wrap { display: flex; flex-direction: column; }
+.pipeline__step {
+  display: flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.4rem;
+  border-radius: var(--radius-sm); color: var(--bone-faint);
+  background: none; border: none; width: 100%; text-align: left;
+  font-family: inherit; cursor: default;
+}
+.pipeline__step--active { background: var(--wheat-dim); color: var(--bone-dim); }
+.pipeline__step--clickable { cursor: pointer; }
+.pipeline__step--clickable:hover { background: var(--line-strong); }
+.pipeline__step:disabled { cursor: default; }
+.pipeline__num { font-size: 0.65rem; flex-shrink: 0; font-family: var(--font-mono); }
+.pipeline__label { font-size: 0.67rem; flex: 1; }
+.pipeline__dot { width: 5px; height: 5px; border-radius: 50%; background: var(--wheat); flex-shrink: 0; }
+.pipeline__chevron { font-size: 0.6rem; color: var(--bone-faint); flex-shrink: 0; }
+.pipeline__step-wrap--open .pipeline__step { color: var(--bone); }
+
+.pipeline__detail {
+  margin: 0.1rem 0 0.35rem 1.1rem;
+  padding: 0.45rem 0.55rem;
+  border-left: 2px solid var(--line-strong);
+  background: rgba(0,0,0,0.18);
+  border-radius: 0 4px 4px 0;
+  display: flex; flex-direction: column; gap: 0.3rem;
+}
+.pipeline__detail-method { font-size: 0.63rem; color: var(--bone-dim); line-height: 1.45; margin: 0; }
+.pipeline__detail-metric { font-size: 0.6rem; color: var(--bone-faint); line-height: 1.4; margin: 0; font-family: var(--font-mono); }
+.pipeline__detail-link {
+  font-size: 0.6rem; color: var(--signal); text-decoration: none;
+  font-family: var(--font-mono);
+}
+.pipeline__detail-link:hover { text-decoration: underline; }
+
+.dash__outputs { display: flex; flex-direction: column; gap: 0.2rem; }
+.dash__output-item { font-size: 0.67rem; color: var(--bone-dim); padding: 0.15rem 0; }
+
+.dash__accuracy { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.5rem; background: var(--ink-800); border: 1px solid var(--line); border-radius: var(--radius-sm); font-size: 0.65rem; color: var(--bone-dim); font-family: var(--font-mono); }
+.dash__accuracy-multi { color: var(--signal); }
+.dash__methodlink { font-size: 0.65rem; color: var(--signal); margin-top: auto; }
+
+/* ── Main ── */
+.dash__main { display: flex; flex-direction: column; overflow: hidden; }
+
+/* ── Header ── */
+.dash__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 1.1rem; border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.dash__header-left { display: flex; flex-direction: column; gap: 0.15rem; }
+.dash__title { font-size: 1.15rem; font-weight: 700; color: var(--bone); letter-spacing: -0.01em; }
+.dash__subtitle { font-size: 0.68rem; color: var(--bone-faint); }
+.dash__header-stats { display: flex; gap: 1.7rem; align-items: baseline; }
+.dash__hstat { display: flex; flex-direction: column; align-items: flex-end; gap: 0.1rem; }
+.dash__hstat-val { font-size: 1rem; font-weight: 600; color: var(--bone-dim); font-family: var(--font-mono); }
+.dash__hstat-lbl { font-size: 0.6rem; color: var(--bone-faint); }
+.dash__hstat--hi .dash__hstat-val { color: var(--wheat); font-weight: 700; }
+.dash__hstat--warn .dash__hstat-val { color: var(--bone-dim); }
+
+/* ── Three map panels ── */
+.dash__maps-section { display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden; }
+
+/* Quiet figure-caption — annotates what you're looking at, styled like
+   a museum placard, not an alert. No border, no background fill. */
+.dash__map-caption {
+  font-size: 0.65rem;
+  color: var(--bone-faint);
+  font-style: italic;
+  padding: 0.5rem 1.1rem;
+  flex-shrink: 0;
+}
+.dash__map-caption em { color: var(--bone-dim); font-style: normal; font-weight: 600; }
+.dash__map-caption a { color: var(--signal); text-decoration: none; font-style: normal; }
+.dash__map-caption a:hover { text-decoration: underline; }
+
+.dash__hstat-info {
+  font-size: 0.62rem;
+  opacity: 0.7;
+  cursor: help;
+  margin-left: 0.1rem;
+}
+
+.dash__maps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  padding: 0.4rem 1.1rem 0.7rem;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.dash__panel {
+  background: var(--ink-900);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0.55rem;
+  gap: 0.4rem;
+}
+
+.dash__panel-head {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.72rem; font-weight: 600; color: var(--bone);
+  flex-shrink: 0;
+}
+.dash__panel-badge {
+  font-family: var(--font-mono); font-size: 0.58rem;
+  background: var(--signal-dim); color: var(--signal);
+  border-radius: 2px; padding: 0.1rem 0.4rem;
+}
+
+.fgrid__svg { width: 100%; height: auto; flex: 1; min-height: 0; }
+.fgrid__empty { display: grid; place-items: center; height: 100px; color: var(--bone-faint); font-size: 0.7rem; }
+
+/* ── Map tooltip content (rendered inside FieldMap's leaflet Tooltip) ── */
+.fmap__ttip { display: flex; flex-direction: column; gap: 0.1rem; min-width: 120px; }
+.fmap__ttip strong { color: var(--wheat); font-size: 0.68rem; }
+.fmap__ttip span { color: var(--bone-dim); font-size: 0.6rem; }
+
+.dash__map-tabs { display: flex; gap: 0.2rem; }
+.dash__map-tab { font-size: 0.6rem; padding: 0.15rem 0.45rem; border-radius: 2px; background: transparent; color: var(--bone-faint); }
+.dash__map-tab.active { background: var(--line-strong); color: var(--bone); }
+
+.dash__legend { display: flex; flex-wrap: wrap; gap: 0.4rem; flex-shrink: 0; }
+.dash__legend-item { display: flex; align-items: center; gap: 0.28rem; font-size: 0.6rem; color: var(--bone-dim); }
+.dash__legend-item i { width: 7px; height: 7px; border-radius: 1px; display: inline-block; flex-shrink: 0; }
+
+.dash__accuracy-tag { font-size: 0.62rem; color: var(--bone-faint); font-family: var(--font-mono); flex-shrink: 0; }
+
+.dash__stress-dist { display: flex; flex-direction: column; gap: 0.25rem; flex-shrink: 0; }
+.dash__stress-bar-row { display: grid; grid-template-columns: 70px 1fr 24px; align-items: center; gap: 0.3rem; font-size: 0.6rem; color: var(--bone-faint); }
+.dash__stress-bar-track { height: 4px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden; }
+.dash__stress-bar-fill { height: 100%; border-radius: 999px; }
+
+.dash__stage-dist { display: flex; justify-content: space-between; flex-shrink: 0; }
+.dash__stage-item { display: flex; flex-direction: column; align-items: center; gap: 0.15rem; font-size: 0.6rem; color: var(--bone-faint); }
+.dash__stage-count { font-size: 0.85rem; font-weight: 700; font-family: var(--font-mono); }
+
+/* ── Irrigation panel ── */
+.dash__irrig {
+  background: var(--ink-900);
+  border-top: 1px solid var(--line);
+  padding: 0.7rem 1.1rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.dash__irrig-head {
+  font-size: 0.72rem; font-weight: 700; color: var(--bone-dim);
+  letter-spacing: 0.05em; text-transform: uppercase;
+}
+.dash__irrig-field { font-weight: 400; color: var(--wheat); margin-left: 0.4rem; text-transform: none; letter-spacing: 0; }
+
+.dash__irrig-body { display: grid; grid-template-columns: 1.2fr 0.9fr 1fr 1fr; gap: 0.55rem; }
+
+.dash__irrig-card {
+  background: var(--ink-800);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.dash__irrig-card-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--bone-faint); }
+.dash__irrig-action { font-size: 0.78rem; font-weight: 600; color: var(--bone); line-height: 1.3; }
+.dash__irrig-action--urgent { color: var(--stress-high); }
+.dash__irrig-reason { font-size: 0.62rem; color: var(--bone-faint); }
+.dash__irrig-bignum { font-size: 1.4rem; font-weight: 700; font-family: var(--font-mono); color: var(--wheat); }
+.dash__irrig-sub { font-size: 0.6rem; color: var(--bone-faint); }
+.dash__irrig-mapwrap { flex: 1; min-height: 0; }
+.dash__irrig-legend-row { display: flex; gap: 0.5rem; font-size: 0.6rem; }
+
+.gauge__svg { width: 140px; height: 90px; }
+
+.dash__irrig-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.63rem; color: var(--bone-faint);
+  padding-top: 0.4rem; border-top: 1px solid var(--line);
+}
+.dash__irrig-footer strong { color: var(--bone-dim); }
+
+/* ── Backend-offline banner — a genuine error state, the one place
+   an alarm color is actually earned. ── */
+.dash__offline-banner {
+  background: rgba(166, 71, 43, 0.12);
+  border-bottom: 1px solid var(--stress-high);
+  color: #e3a487;
+  font-size: 0.68rem;
+  padding: 0.55rem 1.1rem;
+  flex-shrink: 0;
+}
+.dash__offline-banner code {
+  font-family: var(--font-mono);
+  background: rgba(0,0,0,0.3);
+  padding: 0.05rem 0.3rem;
+  border-radius: 3px;
+}
+
+/* ── Annotation card — the single, consolidated place for "context
+   you need before drawing conclusions." Styled like a quiet
+   documentation panel (thin hairline border, neutral surface, small
+   restrained glyph) rather than a warning/alert box — nothing about
+   explanatory prose is inherently urgent, so it shouldn't look urgent.
+   Real urgency (offline banner, high-stress data) still gets color;
+   this doesn't. ── */
+.dash__readfirst {
+  flex-shrink: 0;
+  margin: 0.7rem 1.1rem 0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--ink-900);
+}
+.dash__readfirst-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+.dash__readfirst-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+.dash__readfirst-glyph { flex-shrink: 0; opacity: 0.8; }
+.dash__readfirst-close {
+  background: none;
+  border: none;
+  color: var(--bone-faint);
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.4rem;
+  line-height: 1;
+}
+.dash__readfirst-close:hover { color: var(--bone); }
+.dash__readfirst-list {
+  margin: 0;
+  padding: 0.75rem 0.9rem 0.85rem 2.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+}
+.dash__readfirst-list li {
+  position: relative;
+  font-size: 0.68rem;
+  line-height: 1.55;
+  color: var(--bone-dim);
+}
+.dash__readfirst-list li::before {
+  content: "";
+  position: absolute;
+  left: -0.85rem;
+  top: 0.5em;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--bone-faint);
+}
+.dash__readfirst-list strong { color: var(--bone); font-weight: 600; }
+.dash__readfirst-footer {
+  padding: 0 0.9rem 0.75rem 2.15rem;
+  font-size: 0.62rem;
+  color: var(--bone-faint);
+}
+.dash__readfirst-footer a { color: var(--signal); text-decoration: none; }
+.dash__readfirst-footer a:hover { text-decoration: underline; }
+
+.dash__readfirst-reopen {
+  flex-shrink: 0;
+  margin: 0.7rem 1.1rem 0;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--bone-faint);
+  font-size: 0.65rem;
+  padding: 0.4rem 0.8rem;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+}
+.dash__readfirst-reopen:hover { color: var(--bone-dim); border-color: var(--line-strong); }
+
+/* ── Responsive: phones / narrow tablets ──
+   Below ~900px the fixed 200px-sidebar + 1fr-content grid has nowhere
+   to put the main content on screen — this is what was happening on
+   mobile. Below this breakpoint we drop the side-by-side grid, turn
+   the sidebar into a short collapsible strip pinned to the top, and
+   let the whole page scroll normally so every panel is reachable. */
+@media (max-width: 900px) {
+  html, body, #root { height: auto; min-height: 100%; }
+
+  .dash {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .dash__sidebar {
+    max-height: 40vh;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    flex-shrink: 0;
+  }
+  .dash__methodlink { margin-top: 0.5rem; }
+
+  .dash__main { overflow: visible; }
+
+  .dash__header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .dash__header-stats { flex-wrap: wrap; row-gap: 0.5rem; }
+
+  .dash__maps-section { flex: none; overflow: visible; }
+  .dash__maps {
+    grid-template-columns: 1fr;
+    overflow: visible;
+    flex: none;
+  }
+  .dash__panel { height: 340px; }
+
+  .dash__irrig-body { grid-template-columns: 1fr 1fr; }
+  .dash__irrig-mapwrap { height: 220px; }
+}
+
+@media (max-width: 480px) {
+  .dash__irrig-body { grid-template-columns: 1fr; }
+}

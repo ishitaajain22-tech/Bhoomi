@@ -1,0 +1,83 @@
+.heatmap {
+  background: var(--soil-900);
+  border: 1px solid var(--soil-line);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.5rem;
+}
+
+.heatmap__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.heatmap__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--bone-faint);
+  margin: 0;
+}
+
+.heatmap__legend {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.74rem;
+  color: var(--bone-dim);
+}
+
+.heatmap__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.heatmap__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.heatmap__dot--sar {
+  background: var(--sar-blue);
+}
+
+.heatmap__dot--optical {
+  background: var(--amber);
+}
+
+.heatmap__svg {
+  width: 100%;
+  height: auto;
+}
+
+.heatmap__axis {
+  stroke: var(--soil-line);
+  stroke-width: 1;
+}
+
+.heatmap__line--sar {
+  stroke: var(--sar-blue);
+  stroke-width: 2;
+}
+
+.heatmap__point--sar {
+  fill: var(--soil-900);
+  stroke: var(--sar-blue);
+  stroke-width: 2;
+}
+
+.heatmap__point--optical {
+  fill: var(--amber);
+}
+
+.heatmap__tick {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  fill: var(--bone-faint);
+}

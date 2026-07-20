@@ -1,0 +1,143 @@
+.croplist {
+  background: var(--soil-900);
+  border: 1px solid var(--soil-line);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+}
+
+.croplist__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--bone-faint);
+  margin: 0 0 0.2rem;
+}
+
+.croplist__count {
+  font-size: 0.74rem;
+  color: var(--bone-dim);
+  margin: 0 0 0.9rem;
+}
+
+.croplist__groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.croplist__group {
+  border: 1px solid var(--soil-line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.croplist__group-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(241, 236, 224, 0.03);
+  border: none;
+  padding: 0.7rem 0.8rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.croplist__group-head:hover {
+  background: rgba(241, 236, 224, 0.06);
+}
+
+.croplist__group-label {
+  font-size: 0.84rem;
+  color: var(--bone);
+  font-weight: 500;
+  flex: 1;
+}
+
+.croplist__group-count {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--bone-faint);
+  background: rgba(241, 236, 224, 0.06);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+}
+
+.croplist__chevron {
+  color: var(--bone-faint);
+  font-size: 0.9rem;
+  transition: transform 0.15s ease;
+}
+
+.croplist__chevron.is-open {
+  transform: rotate(180deg);
+}
+
+.croplist__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.croplist__dot--danger {
+  background: var(--danger);
+}
+.croplist__dot--amber {
+  background: var(--amber);
+}
+.croplist__dot--sar {
+  background: var(--sar-blue);
+}
+
+.croplist__list {
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.croplist__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.6rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.croplist__item:hover {
+  background: rgba(241, 236, 224, 0.04);
+}
+
+.croplist__item.is-active {
+  background: var(--sar-blue-dim);
+  border-color: rgba(95, 182, 214, 0.3);
+}
+
+.croplist__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.croplist__name {
+  font-size: 0.85rem;
+  color: var(--bone);
+  font-weight: 500;
+}
+
+.croplist__sub {
+  font-size: 0.72rem;
+  color: var(--bone-faint);
+}

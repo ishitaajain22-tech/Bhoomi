@@ -1,0 +1,98 @@
+.mstats {
+  display: flex;
+  align-items: stretch;
+  gap: 1.6rem;
+  background: var(--soil-900);
+  border: 1px solid var(--soil-line);
+  border-radius: var(--radius-lg);
+  padding: 1.3rem 1.6rem;
+  margin-bottom: var(--gap);
+  flex-wrap: wrap;
+}
+
+.mstats__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 140px;
+}
+
+.mstats__item--alert .mstats__value {
+  color: var(--amber);
+}
+
+.mstats__value {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: var(--bone);
+  line-height: 1;
+}
+
+.mstats__value small {
+  font-size: 1rem;
+  color: var(--bone-faint);
+}
+
+.mstats__label {
+  font-size: 0.74rem;
+  color: var(--bone-faint);
+}
+
+.mstats__sep {
+  width: 1px;
+  background: var(--soil-line);
+  align-self: stretch;
+  margin: 0.2rem 0;
+}
+
+@media (max-width: 800px) {
+  .mstats__sep {
+    display: none;
+  }
+}
+
+.mstats__classifier {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 180px;
+}
+
+.mstats__classifier-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--bone-faint);
+  margin: 0;
+}
+
+.mstats__classifier-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.mstats__badge {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  background: rgba(241, 236, 224, 0.06);
+  border: 1px solid var(--soil-line);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  color: var(--bone-dim);
+}
+
+.mstats__badge--acc {
+  background: var(--sar-blue-dim);
+  border-color: rgba(95, 182, 214, 0.3);
+  color: var(--sar-blue);
+}
+
+.mstats__classifier-sub {
+  font-size: 0.7rem;
+  color: var(--bone-faint);
+  margin: 0;
+  line-height: 1.4;
+}

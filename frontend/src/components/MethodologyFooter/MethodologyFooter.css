@@ -1,0 +1,31 @@
+.methfooter {
+  margin-top: 0.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--soil-line);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.methfooter__row {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.76rem;
+  flex-wrap: wrap;
+}
+
+.methfooter__label {
+  font-family: var(--font-mono);
+  color: var(--bone-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+  min-width: 120px;
+  flex-shrink: 0;
+  padding-top: 0.1rem;
+}
+
+.methfooter__value {
+  color: var(--bone-dim);
+  line-height: 1.5;
+}

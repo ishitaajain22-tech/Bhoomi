@@ -1,0 +1,135 @@
+.mapview {
+  background: linear-gradient(180deg, var(--soil-900), var(--soil-950));
+  border: 1px solid var(--soil-line);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.mapview__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.mapview__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bone-faint);
+  margin: 0 0 0.35rem;
+}
+
+.mapview__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.45rem;
+  margin: 0;
+  color: var(--bone);
+}
+
+.mapview__toggle {
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--soil-line);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.mapview__toggle button {
+  background: transparent;
+  border: none;
+  color: var(--bone-dim);
+  font-size: 0.82rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mapview__toggle button.is-active {
+  background: var(--sar-blue-dim);
+  color: var(--sar-blue);
+}
+
+.mapview__canvas {
+  position: relative;
+}
+
+.mapview__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.mapview__plot-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  fill: var(--bone-dim);
+}
+
+.mapview__cloud {
+  fill: rgba(241, 236, 224, 0.55);
+  filter: blur(8px);
+}
+
+.mapview__legend {
+  display: flex;
+  gap: 1.1rem;
+  margin-top: 0.7rem;
+  font-size: 0.74rem;
+  color: var(--bone-dim);
+}
+
+.mapview__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mapview__legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.mapview__disclosure {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--bone-faint);
+  margin: 0.4rem 0 0;
+}
+
+.mapview__readout {
+  margin-top: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.mapview__readout.is-blind {
+  background: rgba(217, 104, 74, 0.12);
+  color: #f0a48d;
+}
+
+.mapview__readout.is-clear {
+  background: var(--sar-blue-dim);
+  color: var(--sar-blue);
+}
+
+.mapview__readout-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}

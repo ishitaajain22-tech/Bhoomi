@@ -1,0 +1,67 @@
+.fielddetail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.2rem 2rem 3rem;
+}
+
+.fielddetail__back {
+  font-size: 0.82rem;
+  color: var(--bone-faint);
+  text-decoration: none;
+}
+
+.fielddetail__back:hover {
+  color: var(--sar-blue);
+}
+
+.fielddetail__title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin: 0.6rem 0 0.2rem;
+  color: var(--bone);
+}
+
+.fielddetail__sub {
+  color: var(--bone-dim);
+  margin: 0 0 1.8rem;
+}
+
+.fielddetail__section {
+  margin-bottom: 2rem;
+}
+
+.fielddetail__heading {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--bone);
+  margin: 0 0 0.5rem;
+}
+
+.fielddetail__meta {
+  font-size: 0.84rem;
+  color: var(--bone-dim);
+  margin: 0 0 1rem;
+}
+
+.phenochart {
+  width: 100%;
+  height: auto;
+  background: var(--soil-900);
+  border: 1px solid var(--soil-line);
+  border-radius: var(--radius-md);
+}
+
+.phenochart__axis {
+  stroke: var(--soil-line);
+}
+
+.phenochart__line {
+  stroke: var(--sar-blue);
+  stroke-width: 2;
+}
+
+.phenochart__point {
+  fill: var(--soil-900);
+  stroke: var(--sar-blue);
+  stroke-width: 1.5;
+}

@@ -1,0 +1,53 @@
+.vbadge {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: var(--soil-900);
+  border: 1px solid var(--soil-line);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.4rem;
+  flex-wrap: wrap;
+}
+
+.vbadge__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.vbadge__value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--bone);
+}
+
+.vbadge__label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--bone-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.vbadge__divider {
+  width: 1px;
+  height: 36px;
+  background: var(--soil-line);
+}
+
+.vbadge__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.74rem;
+  color: var(--bone-dim);
+  flex: 1;
+  min-width: 220px;
+}
+
+.vbadge__honest {
+  color: var(--bone-faint);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}

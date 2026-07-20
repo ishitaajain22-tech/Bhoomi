@@ -1,0 +1,61 @@
+.cas {
+  background: linear-gradient(180deg, rgba(232, 163, 61, 0.06), var(--soil-900));
+  border: 1px solid rgba(232, 163, 61, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.5rem;
+}
+
+.cas__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 0.3rem;
+}
+
+.cas__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0 0 1.1rem;
+  color: var(--bone);
+}
+
+.cas__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.cas__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cas__stat-value {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--bone);
+}
+
+.cas__stat-value small {
+  font-size: 0.95rem;
+  color: var(--bone-faint);
+  margin-left: 0.15rem;
+}
+
+.cas__stat-label {
+  font-size: 0.74rem;
+  color: var(--bone-faint);
+  line-height: 1.3;
+}
+
+@media (max-width: 700px) {
+  .cas__stats {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+}

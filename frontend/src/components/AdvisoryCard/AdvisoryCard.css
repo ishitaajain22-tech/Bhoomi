@@ -1,0 +1,185 @@
+.advisory {
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--soil-line);
+  background: var(--soil-900);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.advisory--urgent {
+  border-color: rgba(217, 104, 74, 0.35);
+  background: linear-gradient(180deg, rgba(217, 104, 74, 0.07), var(--soil-900));
+}
+
+.advisory--ok {
+  border-color: rgba(95, 182, 214, 0.25);
+  background: linear-gradient(180deg, rgba(95, 182, 214, 0.06), var(--soil-900));
+}
+
+.advisory__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--bone-faint);
+}
+
+.advisory__field {
+  letter-spacing: 0.04em;
+  color: var(--bone-dim);
+}
+
+.advisory__action {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--bone);
+}
+
+.advisory--urgent .advisory__action {
+  color: #f0a48d;
+}
+
+.advisory__amount {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin: -0.3rem 0 0;
+  color: var(--amber);
+}
+
+.advisory__reason {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--bone-dim);
+  margin: 0;
+}
+
+.advisory__meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--bone-faint);
+  margin-top: 0.2rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--soil-line);
+}
+
+.advisory__phenology {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.advisory__phenology-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  background: var(--sar-blue-dim);
+  color: var(--sar-blue);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+}
+
+.advisory__phenology-sub {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--bone-faint);
+}
+
+.advisory__waterbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.8rem;
+  margin: 0.2rem 0;
+}
+
+.advisory__waterbar-row {
+  display: grid;
+  grid-template-columns: 78px 1fr 56px;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.advisory__waterbar-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--bone-faint);
+}
+
+.advisory__waterbar-track {
+  height: 6px;
+  background: rgba(241, 236, 224, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.advisory__waterbar-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.advisory__waterbar-fill--demand {
+  background: var(--clay);
+}
+
+.advisory__waterbar-fill--rain {
+  background: var(--sar-blue);
+}
+
+.advisory__waterbar-value {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--bone-dim);
+  text-align: right;
+}
+
+.advisory__waterbar-deficit {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--amber);
+  text-align: right;
+  padding-top: 0.2rem;
+  border-top: 1px solid var(--soil-line);
+}
+
+.advisory__indices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.advisory__index-chip {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--bone-dim);
+  background: rgba(241, 236, 224, 0.06);
+  border: 1px solid var(--soil-line);
+  border-radius: 999px;
+  padding: 0.22rem 0.6rem;
+}
+
+.advisory__index-chip--vci {
+  color: var(--amber);
+  border-color: rgba(232, 163, 61, 0.3);
+  background: var(--amber-dim);
+}
+
+.advisory__index-chip--smi {
+  color: var(--sar-blue);
+  border-color: rgba(95, 182, 214, 0.3);
+  background: var(--sar-blue-dim);
+}
+
+.advisory__index-chip--multi {
+  color: var(--amber);
+  border-color: rgba(232, 163, 61, 0.3);
+  background: var(--amber-dim);
+}
