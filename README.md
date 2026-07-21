@@ -15,23 +15,13 @@ crop and irrigation monitoring working through monsoon cloud cover.
 cd backend
 python3 -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements-serve.txt
+pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 Check the terminal prints `Uvicorn running on http://127.0.0.1:8000` with
 no errors before moving on to the frontend.
 
-Use `requirements-serve.txt`, not `requirements.txt`, unless you
-specifically need to re-run the GEE export scripts. `requirements.txt`
-pins exact old versions (numpy==1.26.4 etc.) that have no prebuilt
-wheel for newer Python — pip then tries to compile numpy from source
-and fails with a "metadata-generation-failed" error. It also drags in
-`rasterio`/`sentinelhub`, which need system GDAL libraries and aren't
-used anywhere in the API's serving path (only by the offline
-`app/services/sentinel1_fetch.py` / `sentinel2_fetch.py` export
-scripts). `requirements-serve.txt` leaves versions unpinned so pip
-picks whatever wheel matches your Python, and drops those two —
-that's all the API itself needs to run.
+
 
 ## Quick start (frontend)
 ```
