@@ -1,31 +1,16 @@
-# Lean install for actually RUNNING the API (what you need for a demo/judging).
-#
-# Unlike requirements.txt, these are NOT pinned to exact old versions —
-# that's what was causing the numpy build failure (numpy==1.26.4 has no
-# prebuilt wheel for newer Python, so pip tried to compile it from
-# source and failed). Letting pip pick a compatible modern version
-# fixes that; the app has been verified to work fine on
-# numpy 2.x / pandas 3.x / scikit-learn 1.8.
-#
-# This also drops rasterio and sentinelhub, which need system GDAL
-# libraries and are only used by the offline GEE-export scripts
-# (app/services/sentinel1_fetch.py, sentinel2_fetch.py) — not by the
-# API routes that actually serve the dashboard. If you need to re-run
-# a GEE export, install requirements.txt in a separate environment
-# instead.
-#
-# Usage:
-#   python3 -m venv .venv && source .venv/bin/activate   # (Windows: .venv\Scripts\activate)
-#   pip install -r requirements.txt
-#   uvicorn app.main:app --reload
+fastapi>=0.115
+uvicorn[standard]>=0.30
 
-fastapi
-uvicorn[standard]
-pydantic
-pydantic-settings
-numpy
-pandas
-scikit-learn
-joblib
-pytest
+pydantic>=2.7
+pydantic-settings>=2.2
+
+numpy>=2.0
+pandas>=2.2
+scikit-learn>=1.5
+joblib>=1.4
+
+python-multipart
+requests
+
 httpx
+pytest
